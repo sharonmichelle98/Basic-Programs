@@ -36,14 +36,14 @@ function updateOrderStatus(orderId, status) {
 
 // TODO: selesaikan fungsi calculateTotalRevenue dari order yang berstatus Selesai
 function calculateTotalRevenue() {
-  const finishedOrder = orders.filter((order) => order.status === 'Selesai');
-  return finishedOrder.reduce((acc, finishedOrder) => acc + finishedOrder.price, 0);
+  const finishedOrder = orders.filter((order) => order.status == 'Selesai');
+  return finishedOrder.reduce((acc, order) => acc + order.price, 0);
 }
 
 // TODO: selesaikan fungsi deleteOrder
 function deleteOrder(id) {
-  const deletedOrder = orders.filter((order) => order.id === id);
-  orders.splice(deletedOrder, 1);
+  const deletedOrderIndex = orders.filter((order) => order.id === id);
+  orders.splice(deletedOrderIndex, 1);
 }
 
 export { orders, addOrder, updateOrderStatus, calculateTotalRevenue, deleteOrder };
